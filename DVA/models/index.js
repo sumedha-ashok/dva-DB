@@ -9,7 +9,7 @@ var env = process.env.NODE_ENV || 'development';
 var db = {};
 var sqlHost = process.env.MSSQL_PORT_1433_TCP_ADDR || '127.0.0.1';
 var sqlPass = 'Test123!';
-var sqlDb = 'DVA'
+var sqlDb = 'DVADb'
 var sqlUser = 'SA';
 var sequelize;
 

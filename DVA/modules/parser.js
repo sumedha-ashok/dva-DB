@@ -1,7 +1,7 @@
 const csv = require('csv-streamify')
 var Parser = require('tsv').Parser
 var TSV = new Parser("\t", { header: false })
-var path = '/mnt/d/Maam/amazon_reviews_us_Camera_v1_00/amazon_reviews_us_Camera_v1_00.tsv';
+var path = '/home/sumedha/Downloads/DVA/amazon_reviews_us_Electronics_v1_00.tsv';
 var fs = require('fs')
     , es = require('event-stream');
 
