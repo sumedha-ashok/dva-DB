@@ -1,0 +1,6 @@
+USE DVA;  
+GO  
+
+SELECT COUNT(*) FROM ReviewAspects2
+SELECT COUNT(*) FROM Aspects2
+GO

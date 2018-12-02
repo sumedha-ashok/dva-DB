@@ -9,7 +9,7 @@ var env = process.env.NODE_ENV || 'development';
 var db = {};
 var sqlHost = process.env.MSSQL_PORT_1433_TCP_ADDR || '127.0.0.1';
 var sqlPass = 'Test123!';
-var sqlDb = 'DVADb'
+var sqlDb = 'DVA'
 var sqlUser = 'SA';
 var sequelize;
 
@@ -21,9 +21,9 @@ sequelize = new Sequelize(sqlDb, sqlUser, sqlPass, {
     port: 1433,
 
     pool: {
-        max: 5,
+        max: 25,
         min: 0,
-        idle: 10000
+        idle: 50000
     },
     dialectOptions: {
         encrypt: true

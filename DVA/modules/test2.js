@@ -2,7 +2,7 @@ var fs = require('fs'),
   JSONStream = require('JSONStream'),
   es = require('event-stream');
 var db = require('../db')
-
+var jsonData = require('../r3.json');
 var clusters = {};
 var aspects = {};
 var count = 0;
@@ -20,8 +20,7 @@ async function asyncForEach(array, callback) {
 }
 
 async function test() {
-	getStream()
-  .pipe(await es.mapSync(async function (data) {
+	await asyncForEach(jsonData, async function(data) {
     var productId = Object.keys(data)[0];
 	var reviews = data[productId];
     console.log(productId);
@@ -60,7 +59,8 @@ async function test() {
 	});
 	console.log(clusters);
 	console.log(aspects);
-  }));
+  });
 }
 
 test();
+

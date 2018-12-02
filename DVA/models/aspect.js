@@ -14,5 +14,9 @@ module.exports = (sequelize, DataTypes) => {
         polarity: DataTypes.FLOAT
     });
 
+    Aspect.associate = function (models) {
+        models.Aspect.belongsTo(models.Cluster, { foreignKey: 'clusterId' });
+    };
+
     return Aspect;
 };
